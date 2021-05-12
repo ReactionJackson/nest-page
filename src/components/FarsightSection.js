@@ -79,7 +79,7 @@ const Frame = styled(motion.div)`
 `
 
 const Content = styled.div`
-  padding: 80px 20px 0 20px;
+  padding: 80px 40px 0 40px;
   ${ media(1100, `padding-top: 50px;`) }
 `
 

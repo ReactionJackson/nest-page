@@ -86,7 +86,12 @@ const Title = styled(Fader)`
   font-weight: 700;
   line-height: 50px;
   margin: -10px 0 30px 0;
-  ${ media(1250, `
+  ${ media(1350, `
+    font-size: 35px;
+    line-height: 45px;
+    margin: 0 0 23px 0;
+  `)}
+  ${ media(1100, `
     font-size: 30px;
     line-height: 40px;
     margin: 0 0 15px 0;
@@ -98,7 +103,12 @@ const Body = styled(Fader)`
   font-weight: 400;
   line-height: 40px;
   margin-bottom: 35px;
-  ${ media(1250, `
+  ${ media(1350, `
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 27px;
+  `)}
+  ${ media(1100, `
     font-size: 16px;
     line-height: 26px;
     margin-bottom: 20px;

@@ -76,10 +76,13 @@ const ContentPanel = styled.div`
   align-items: center;
   width: 50%;
   height: 100%;
-  ${ ({ reversed }) => media(1100, `padding-${ reversed ? 'right' : 'left' }: 20px;`) }
+  ${ ({ reversed }) => media(1100, `
+    padding-${ reversed ? 'left' : 'right' }: 20px;
+    padding-${ reversed ? 'right' : 'left' }: 40px;
+  `) }
   ${ media(900, `
     width: 100%;
-    padding: 50px 0;
+    padding: 50px 20px;
   `) }
 `
 
