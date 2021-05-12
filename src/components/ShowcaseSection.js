@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import styled from 'styled-components'
 import ContentBlock from './ContentBlock'
-import { colors, sizes, productColors, productColorNames } from '../constants'
+import { colors, productColors, productColorNames } from '../constants'
 
 const ShowcaseSection = () => {
 

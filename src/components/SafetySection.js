@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import ContentBlock from './ContentBlock'
-import { colors, sizes } from '../constants'
 
 const SafetySection = () => (
   <Container>
