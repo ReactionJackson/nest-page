@@ -27,7 +27,7 @@ const Container = styled.div`
   font-weight: 400;
   position: absolute;
   left: 50.15%;
-  top: 52.50%;
+  top: 52.0%;
   transform: translate3d(-50%, -50%, 0);
   user-select: none;
   ${ media(1100, `font-size: 20px;`) }

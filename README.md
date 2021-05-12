@@ -24,7 +24,7 @@ These  are more drastic improvements to certain sections of the page that again 
   - The section locks as you arrive
   - A black mask fades away and the image slowly zooms in, to simulate someone walking into the room and turning the lights on
   - The display on the Nest then turns on, showing the actual current time
-  - Note: if I had access to assets, I would overlay the Nest onto the background so the clock positioning would be exact at all screen heights. However given the nature of this test / assets, it may appear out of place.
+  - Note: if I had access to assets, I would overlay a Nest image onto a background without a Nest in it, so the clock positioning would be exact at all screen sizes. However given the nature of this test / assets, it may appear out of place. To see the effect as intended, view at 1440 x 900.
 
 ## Not Included
 
