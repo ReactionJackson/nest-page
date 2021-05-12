@@ -19,19 +19,34 @@ const ContentBlock = ({
     <Container 
       { ...props }
       ref={ ref }
-      theme={ theme }
-      isRevealed={ isRevealed }>
+      theme={ theme }>
       <Content 
         theme={ theme }
         narrow={ narrow }>
-        <Title>{ title }</Title>
+        <Title
+          as="h3"
+          isRevealed={ isRevealed }>
+          { title }
+        </Title>
         { body && (
-          <Body dangerouslySetInnerHTML={{ __html: body }} />
+          <Body
+            as="p"
+            delay={ 100 }
+            isRevealed={ isRevealed }
+            dangerouslySetInnerHTML={{ __html: body }}
+          />
         )}
         { cta.href && (
-          <Button color="black" href={ cta.href }>
-            { cta.label || 'Find out more' }
-          </Button>
+          <Fader
+            delay={ 200 }
+            isRevealed={ isRevealed }>
+            <Button
+              color="black"
+              href={ cta.href }
+              isRevealed={ isRevealed }>
+              { cta.label || 'Find out more' }
+            </Button>
+          </Fader>
         )}
       </Content>
     </Container>
@@ -42,11 +57,6 @@ const Container = styled.div`
   z-index: 100;
   position: relative;
   width: 100%;
-  transition: all cubic-bezier(0.3,-0.03, 0, 1.04) 2500ms;
-  opacity: ${ ({ isRevealed }) => isRevealed ? 1 : 0 };
-  transform:
-    translate3d(0, ${ ({ isRevealed }) => isRevealed ? 0 : '60px' }, 0)
-    scale(${ ({ isRevealed }) => isRevealed ? 1 : 0.94 });
 `
 
 const Content = styled.div`
@@ -60,14 +70,21 @@ const Content = styled.div`
   }
 `
 
-const Title = styled.h3`
+const Fader = styled.div`
+  transition: all cubic-bezier(0.12, 0.88, 0.51, 1.12) 600ms;
+  transition-delay: ${ ({ delay }) => delay || 0 }ms;
+  opacity: ${ ({ isRevealed }) => isRevealed ? 1 : 0 };
+  transform: translate3d(0, ${ ({ isRevealed }) => isRevealed ? 0 : '50px' }, 0)
+`
+
+const Title = styled(Fader)`
   font-size: 40px;
   font-weight: 700;
   line-height: 50px;
   margin: -10px 0 30px 0;
 `
 
-const Body = styled.p`
+const Body = styled(Fader)`
   font-size: 20px;
   font-weight: 400;
   line-height: 40px;
