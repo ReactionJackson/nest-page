@@ -1,3 +1,37 @@
+# Project Notes & Thoughts
+
+I'd like to give a quick breakdown of things that I've not completed, changed intentionally, or improved.
+
+## Not Included
+
+These are items that I've left out in the interest of time:
+
+- Tech Specs and Compare views (they have viewable stubs instead)
+- Mega Menu and Mobile Menu
+- Footer
+
+## Smaller Changes
+
+These alterations are things that I would pass by the designer before implementing in a delivery setting. I point them out to avoid confusion about a lack of accuracy:
+
+- Slightly different ease in motion in the Hero
+- Typography in the content blocks is altered as I didn't agree with the spacing of the original
+- Play button / close button transitions in video section have been updated
+- Staggered text animation has been changed
+
+## Motion Changes
+
+These  are more drastic improvements to certain sections of the page that again would need to be discussed with the designer:
+
+- Redesigned page toggle and animation in the nav bar, for clarity
+- Added reveal animations to the square images
+- Reworked the progress pips in the product colours section for clarity, as well as fixing autoplay and interruptable behaviour
+- Updates to Farsight / lights on section
+  - The section locks as you arrive
+  - A black mask fades away and the image slowly zooms in, to simulate someone walking into the room and turning the lights on
+  - The display on the Nest then turns on, showing the actual current time
+  - Note: if I had access to assets, I would overlay the Nest onto the background so the clock positioning would be exact at all screen heights. However given the nature of this test / assets, it may appear out of place.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
