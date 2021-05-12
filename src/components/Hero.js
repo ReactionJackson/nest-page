@@ -48,8 +48,8 @@ const Content = styled.div`
   text-align: center;
   opacity: ${ ({ isRevealed }) => isRevealed ? 1 : 0 };
   transform: scale(${ ({ isRevealed }) => isRevealed ? 1 : 0.95 });
-  transition: opacity cubic-bezier(0.3,-0.03, 0, 1.04) 2500ms,
-              transform cubic-bezier(0.3,-0.03, 0, 1.04) 2500ms;
+  transition: opacity cubic-bezier(0.3,-0.03, 0, 1.04) 1200ms,
+              transform cubic-bezier(0.3,-0.03, 0, 1.04) 1200ms;
 `
 
 const SubTitle = styled.h4`
