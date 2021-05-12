@@ -10,6 +10,8 @@ These alterations are things that I would pass by the designer before implementi
 - Typography in the content blocks is altered as I didn't agree with the spacing of the original
 - Play button / close button transitions in video section have been updated
 - Staggered text animation has been changed
+- Minor animation on Buy button
+- Responsive is inevitably different as I have made my own decisions
 
 ## Motion Changes
 
@@ -36,7 +38,7 @@ These are items that I've left out in the interest of time:
 
 I've built this project from scratch, with zero boilerplate from other professional / personal projects. I like to do this as it better shows what my current approach is instead of piggybacking off of past or other people's work.
 
-Responsive for this project has been done in a simple manner, using a `media()` util function. For responsive, I believe in trying to make each component (visually speaking) seamlessly scale down, using whichever arbitrary breakpoints that are necessary for the given component. I know the norm is to have a number of set breakpoints, but I've never agreed with how the page does major jumps using this approach. On other projects, I'd likely choose a more in-depth approach to dealing with responsive, but this page was relatively simple.
+Responsive for this project has been done in a simple manner, using a `media()` util function. For responsive, I believe in trying to make each component (visually speaking) seamlessly scale down, using whichever arbitrary breakpoints that are necessary for the given component. I know the norm is to have a number of set breakpoints, but I've never agreed with how the page does major jumps using this approach. On other projects, I'd likely choose a more in-depth approach to dealing with responsive, such as making typography actually scale, more boilerplate etc., but I don't feel like it was necessary for this page.
 
 Some packages have been used to speed up the process, mostly to save time. None of these packages are out-of-the-box solutions however, so I still had to build out the functionality using these packages.
 
