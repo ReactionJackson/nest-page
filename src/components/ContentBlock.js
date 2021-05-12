@@ -71,7 +71,7 @@ const Content = styled.div`
 `
 
 const Fader = styled.div`
-  transition: all cubic-bezier(0.12, 0.88, 0.51, 1.12) 600ms;
+  transition: all cubic-bezier(0.12, 0.88, 0.39, 0.98) 600ms;
   transition-delay: ${ ({ delay }) => delay || 0 }ms;
   opacity: ${ ({ isRevealed }) => isRevealed ? 1 : 0 };
   transform: translate3d(0, ${ ({ isRevealed }) => isRevealed ? 0 : '50px' }, 0)
