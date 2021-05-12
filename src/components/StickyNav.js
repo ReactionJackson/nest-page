@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import RadioSwitcher from './RadioSwitcher'
 import { useListener } from '../hooks/useListener'
 import { colors, sizes, animations } from '../constants'
+import { media } from '../utils'
 
 const StickyNav = ({ changePage = () => {} }) => {
 
@@ -42,6 +43,11 @@ const Container = styled.nav`
   padding: 0 30px;
   border-bottom: 1px solid ${ colors.greyBorder };
   background: ${ colors.white };
+  ${ media(1120, `padding: 0 20px;`)}
+  ${ media(750, `
+    padding: 0 20px;
+    height: 60px;
+  `)}
 `
 
 const Content = styled.div`
@@ -53,7 +59,10 @@ const Title = styled.span`
   font-size: 25px;
   font-weight: 700;
   display: inline-block;
-  margin-right: 30px;
+  margin-right: 20px;
+  ${ media(1120, `
+    font-size: 18px;
+  `)}
 `
 
 const Button = styled.a`
@@ -75,6 +84,11 @@ const Button = styled.a`
     animation: ${ animations.pulse } 2000ms ease infinite;
     background-color: ${ colors.blueBright };
   }
+  ${ media(750, `
+    height: 40px;
+    width: 90px;
+    font-size: 18px;
+  `)}
 `
 
 const Pricing = styled.p`
@@ -83,6 +97,8 @@ const Pricing = styled.p`
   line-height: 18px;
   text-align: right;
   margin-right: 30px;
+  ${ media(1120, `margin-right: 20px;`)}
+  ${ media(990, `display: none;`)}
 `
 
 const Apr = styled.span`

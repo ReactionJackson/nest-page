@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { colors, pageNames } from '../constants'
+import { media } from '../utils'
 
 const RadioSwitcher = ({ changePage = () => {} }) => {
 
@@ -36,6 +37,7 @@ const Container = styled.div`
   border-radius: 27px;
   background-color: ${ colors.greyPale };
   user-select: none;
+  ${ media(750, `display: none;`)}
 `
 
 const Items = styled.ul`

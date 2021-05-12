@@ -77,8 +77,8 @@ const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - ${ sizes.navHeight }px);
-  min-height: 920px;
+  height: 60vw;
+  min-height: 500px;
   padding: 140px 20px;
   text-align: center;
   background-color: ${ colors.greyMid };

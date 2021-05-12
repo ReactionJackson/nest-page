@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { colors } from '../constants'
+import { media } from '../utils'
 
 const Clock = () => {
 
@@ -26,8 +27,10 @@ const Container = styled.div`
   font-weight: 400;
   position: absolute;
   left: 50.15%;
-  top: 51.15%;
+  top: 52.50%;
   transform: translate3d(-50%, -50%, 0);
+  user-select: none;
+  ${ media(1100, `font-size: 20px;`) }
 `
 
 export default Clock

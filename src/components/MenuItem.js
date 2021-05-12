@@ -18,11 +18,7 @@ const MenuItem = ({ href = '#', color = colors.grey, willExpand = false, reverse
 )
 
 const Container = styled.li`
-  ${ ({ reversed }) => reversed ? `
-    margin-left: 23px;
-  ` : `
-    margin-right: 20px;
-  `};
+  ${ ({ reversed }) => reversed ? `margin-left: 23px;` : `margin-right: 20px;`};
 `
 
 const Item = styled.a`

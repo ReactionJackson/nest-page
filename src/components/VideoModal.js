@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import ReactPlayer from 'react-player/youtube'
 import { IconClose } from '../svgs/IconClose'
-import { colors } from '../constants'
 import { useListener } from '../hooks/useListener'
+import { colors } from '../constants'
+import { media } from '../utils'
 
 const VideoModal = ({ src = '', closeModal = () => {}, isOpen = false }) => {
 
@@ -69,6 +70,12 @@ const CloseButton = styled.button`
     border-color: ${ colors.greyDark };
     background-color: ${ colors.greyDark };
   }
+  ${ media(900, `
+    right: 10px;
+    top: 10px;
+    transform: scale(0.7);
+    &:hover { transform: scale(0.825); }
+  `) }
 `
 
 export default VideoModal

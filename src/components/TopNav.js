@@ -6,10 +6,11 @@ import { IconSearch } from '../svgs/IconSearch'
 import { IconHelp } from '../svgs/IconHelp'
 import { IconBasket } from '../svgs/IconBasket'
 import { colors } from '../constants'
+import { media } from '../utils'
 
 const TopNav = () => (
   <Container>
-    <Menu>
+    <Menu collapsible>
       <MenuItem as="a" href="https://www.google.com">
         <Logo style={{ margin: '-3px 5px 0 0' }} />
       </MenuItem>
@@ -37,8 +38,6 @@ const TopNav = () => (
   </Container>
 )
 
-
-
 const Container = styled.nav`
   display: flex;
   justify-content: space-between;
@@ -53,6 +52,12 @@ const Menu = styled.ul`
   display: flex;
   height: 100%;
   align-items: center;
+  > *:last-child {
+    margin-right: 0;
+  }
+  ${ ({ collapsible }) => media(860, `
+    ${ collapsible ? `> *:nth-of-type(n+2) { display: none; }` : ``}
+  `) }
 `
 
 const Avatar = styled.img`

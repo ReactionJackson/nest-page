@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Button from './Button'
 import { useReveal } from '../hooks/useReveal'
 import { colors } from '../constants'
+import { media } from '../utils'
 
 const ContentBlock = ({
   title = '',
@@ -65,13 +66,16 @@ const Content = styled.div`
   max-width: ${ ({ narrow }) => narrow ? 45 : 65 }%;
   margin: 0 auto;
   text-align: center;
+  ${ ({ narrow }) => media(1100, `max-width: ${ narrow ? 75 : 100 }%;`)}
+  ${ media(600, `max-width: 100%;`)}
   *:last-child {
     margin-bottom: 0;
   }
 `
 
 const Fader = styled.div`
-  transition: all cubic-bezier(0.12, 0.88, 0.39, 0.98) 600ms;
+  transition: opacity cubic-bezier(0.12, 0.88, 0.39, 0.98) 600ms,
+              transform cubic-bezier(0.12, 0.88, 0.39, 0.98) 600ms;
   transition-delay: ${ ({ delay }) => delay || 0 }ms;
   opacity: ${ ({ isRevealed }) => isRevealed ? 1 : 0 };
   transform: translate3d(0, ${ ({ isRevealed }) => isRevealed ? 0 : '50px' }, 0)
@@ -82,6 +86,11 @@ const Title = styled(Fader)`
   font-weight: 700;
   line-height: 50px;
   margin: -10px 0 30px 0;
+  ${ media(1250, `
+    font-size: 30px;
+    line-height: 40px;
+    margin: 0 0 15px 0;
+  `)}
 `
 
 const Body = styled(Fader)`
@@ -89,6 +98,11 @@ const Body = styled(Fader)`
   font-weight: 400;
   line-height: 40px;
   margin-bottom: 35px;
+  ${ media(1250, `
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 20px;
+  `)}
 `
 
 export default ContentBlock

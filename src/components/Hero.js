@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import Button from './Button'
-import { colors } from '../constants'
+import { colors, sizes } from '../constants'
+import { media } from '../utils'
 
 const Hero = () => {
 
@@ -29,11 +30,15 @@ const Hero = () => {
 }
 
 const Container = styled.section`
-  height: calc(100vh - 150px);
+  height: calc(110vh - ${ sizes.navHeight }px - ${ sizes.subNavHeight }px);
   min-height: 650px;
-  margin: 90px 0 20px 0;
+  margin: ${ sizes.navHeight }px 0 20px 0;
   padding: 0 24px 24px 24px;
-  background-color: ${ colors.greyPale }
+  background-color: ${ colors.greyPale };
+  ${ media(750, `
+    margin-top: ${ sizes.navHeightSmall }px;
+    height: calc(100vh - ${ sizes.navHeightSmall }px - ${ sizes.subNavHeight }px);
+  `) }
 `
 
 const Content = styled.div`
@@ -73,11 +78,19 @@ const Title = styled.h1`
     font-style: none;
     color: ${ colors.blueDark };
   }
+  ${ media(750, `
+    font-size: 50px;
+    line-height: 50px;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+  `) }
 `
 
 const Image = styled.img`
   width: 25vw;
+  min-width: 300px;
   margin-bottom: 45px;
+  ${ media(750, `margin-bottom: 30px;`) }
 `
 
 const Tagline = styled.p`

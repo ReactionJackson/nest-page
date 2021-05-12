@@ -40,6 +40,7 @@ export const productColorNames = [
 
 export const sizes = {
   navHeight: 90,
+  navHeightSmall: 50,
   subNavHeight: 60,
 }
 

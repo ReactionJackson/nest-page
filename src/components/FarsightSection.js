@@ -5,6 +5,7 @@ import { interpolate } from '@popmotion/popcorn'
 import ContentBlock from './ContentBlock'
 import Clock from './Clock'
 import { colors, sizes } from '../constants'
+import { media } from '../utils'
 
 const FarsightSection = () => {
 
@@ -35,13 +36,13 @@ const FarsightSection = () => {
   return (
     <Container ref={ track }>
       <motion.div style={{ height: `calc(100vh - ${ sizes.navHeight }px)`, ...container }}>
-        <div style={{ paddingTop: 80 }}>
+        <Content>
           <ContentBlock
             title="It lights up when you walk into the room."
             body="Now the Nest Learning Thermostat does something new. It’s called Farsight, and it lights up to show you the temperature, weather or time. You can even choose a digital or analogue clock face. Farsight is big and bright on the beautiful display – you can see it from across the room."
             theme="light"
           />
-        </div>
+        </Content>
         <motion.div style={{ position: 'absolute', top: 0, width: '100%', height: '100%', scale: roomZoom }}>
           <Scene />
           <motion.div style={{ opacity: clockOpacity }}>
@@ -62,6 +63,11 @@ const Container = styled.section`
   overflow: hidden;
   margin-bottom: 20px;
   background-color: ${ colors.black };
+`
+
+const Content = styled.div`
+  padding: 80px 20px 0 20px;
+  ${ media(1100, `padding-top: 50px;`) }
 `
 
 const Scene = styled.div`
