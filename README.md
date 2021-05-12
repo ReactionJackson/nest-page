@@ -46,6 +46,8 @@ I've not used CSS Grid at any point in this project as I couldn't find any real 
 
 I didn't find a usage for Context within this project. I did drill down a method to get the "pagination" working, but it was a one off and fairly innocent. I am comfortable with exposing state around the app, and my first go-to is almost always React's own useContext approach.
 
+There was no external data involved in this project, however I'm comfortable with GraphQL and dealing with regular REST APIs. I've included my api.js file just in case.
+
 I've not used React Router on this test as it would have been overkill to link to stub pages, but again I have plenty of experience using this in live projects.
 
 Finally, bear in mind that I've done this test on evenings after full days of work, hahaa! So with that in mind, if there are any curious looking areas in my code / composition, I blame that ;)
