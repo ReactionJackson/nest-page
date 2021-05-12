@@ -27,7 +27,10 @@ const FarsightSection = () => {
   const updateInterpolationValue = () => {
     const { top, height } = track.current.getBoundingClientRect()
     mapper.current = interpolate(
-      [ top + window.pageYOffset - sizes.navHeight, top + height - window.innerHeight + window.pageYOffset ],
+      [
+        top + window.pageYOffset - (window.innerWidth <= 750 ? sizes.navHeightSmall : sizes.navHeight),
+        top + height - window.innerHeight + window.pageYOffset
+      ],
       [ 0, 1 ]
     )
   }
@@ -40,7 +43,7 @@ const FarsightSection = () => {
 
   return (
     <Container ref={ track }>
-      <motion.div style={{ height: `calc(100vh - ${ sizes.navHeight }px)`, ...container }}>
+      <Frame style={{ ...container }}>
         <Content>
           <ContentBlock
             title="It lights up when you walk into the room."
@@ -57,7 +60,7 @@ const FarsightSection = () => {
         <motion.div style={{ opacity: faderOpacity }}>
           <Fader />
         </motion.div>
-      </motion.div>
+      </Frame>
     </Container>
   )
 }
@@ -68,6 +71,11 @@ const Container = styled.section`
   overflow: hidden;
   margin-bottom: 20px;
   background-color: ${ colors.black };
+`
+
+const Frame = styled(motion.div)`
+  height: calc(100vh - ${ sizes.navHeight }px);
+  ${ media(750, `height: calc(100vh - ${ sizes.navHeightSmall }px)`) }
 `
 
 const Content = styled.div`
