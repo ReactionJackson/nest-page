@@ -4,6 +4,7 @@ import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { interpolate } from '@popmotion/popcorn'
 import ContentBlock from './ContentBlock'
 import Clock from './Clock'
+import { useListener } from '../hooks/useListener'
 import { colors, sizes } from '../constants'
 import { media } from '../utils'
 
@@ -23,15 +24,19 @@ const FarsightSection = () => {
     left: 0,
   }
 
+  const updateInterpolationValue = () => {
+    const { top, height } = track.current.getBoundingClientRect()
+    mapper.current = interpolate(
+      [ top + window.pageYOffset - sizes.navHeight, top + height - window.innerHeight + window.pageYOffset ],
+      [ 0, 1 ]
+    )
+  }
+
   useEffect(() => {
-    setTimeout(() => {
-      const { top, height } = track.current.getBoundingClientRect()
-      mapper.current = interpolate(
-        [ top + window.pageYOffset - sizes.navHeight, top + height - window.innerHeight + window.pageYOffset ],
-        [ 0, 1 ]
-      )
-    }, [ 1000 ])
+    setTimeout(() => updateInterpolationValue(), [ 1000 ])
   }, [])
+
+  useListener('resize', updateInterpolationValue)
 
   return (
     <Container ref={ track }>
