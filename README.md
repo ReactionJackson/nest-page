@@ -2,14 +2,6 @@
 
 I'd like to give a quick breakdown of things that I've not completed, changed intentionally, or improved.
 
-## Not Included
-
-These are items that I've left out in the interest of time:
-
-- Tech Specs and Compare views (they have viewable stubs instead)
-- Mega Menu and Mobile Menu
-- Footer
-
 ## Smaller Changes
 
 These alterations are things that I would pass by the designer before implementing in a delivery setting. I point them out to avoid confusion about a lack of accuracy:
@@ -31,6 +23,30 @@ These  are more drastic improvements to certain sections of the page that again 
   - A black mask fades away and the image slowly zooms in, to simulate someone walking into the room and turning the lights on
   - The display on the Nest then turns on, showing the actual current time
   - Note: if I had access to assets, I would overlay the Nest onto the background so the clock positioning would be exact at all screen heights. However given the nature of this test / assets, it may appear out of place.
+
+## Not Included
+
+These are items that I've left out in the interest of time:
+
+- Tech Specs and Compare views (they have viewable stubs instead)
+- Mega Menu and Mobile Menu
+- Footer
+
+## General Notes and Thoughts
+
+I've built this project from scratch, with zero boilerplate from other professional / personal projects. I like to do this as it better shows what my current approach is instead of piggybacking off of past or other people's work.
+
+Responsive for this project has been done in a simple manner, using a `media()` util function. For responsive, I believe in trying to make each component (visually speaking) seamlessly scale down, using whichever arbitrary breakpoints that are necessary for the given component. I know the norm is to have a number of set breakpoints, but I've never agreed with how the page does major jumps using this approach. On other projects, I'd likely choose a more in-depth approach to dealing with responsive, but this page was relatively simple.
+
+Some packages have been used to speed up the process, mostly to save time. None of these packages are out-of-the-box solutions however, so I still had to build out the functionality using these packages.
+
+I've not used CSS Grid at any point in this project as I couldn't find any real areas where I'd find it useful to use, however I am comfortable with grid. Previously I have actually built out a full React-based grid system using CSS Grid and Styled Components, the API for which I'm still improving to this day.
+
+I didn't find a usage for Context within this project. I did drill down a method to get the "pagination" working, but it was a one off and fairly innocent. I am comfortable with exposing state around the app, and my first go-to is almost always React's own useContext approach.
+
+I've not used React Router on this test as it would have been overkill to link to stub pages, but again I have plenty of experience using this in live projects.
+
+Finally, bear in mind that I've done this test on evenings after full days of work, hahaa! So with that in mind, if there are any curious looking areas in my code / composition, I blame that ;)
 
 # Getting Started with Create React App
 
