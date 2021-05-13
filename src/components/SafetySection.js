@@ -20,7 +20,7 @@ const SafetySection = () => (
 const Container = styled.section`
   position: relative;
   height: 150vh;
-  background: url(${ require('../assets/img/safety.webp').default }) center no-repeat;
+  background: url(${ require('../assets/img/safety.png').default }) center no-repeat;
   background-size: cover;
   margin-bottom: 20px;
 `
