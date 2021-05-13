@@ -37,7 +37,7 @@ const FarsightSection = () => {
   }
 
   useEffect(() => {
-    setTimeout(() => updateInterpolationValue(), [ 1000 ])
+    setTimeout(() => updateInterpolationValue(), [ 200 ])
   }, [])
 
   useListener('resize', updateInterpolationValue)
